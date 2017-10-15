@@ -1,2 +1,3 @@
 # DnDShowcase
-A persentation of drag and drop mechanism in iOS 11+
+This code should present only drag and drop mechanism. Nothing more.
+
