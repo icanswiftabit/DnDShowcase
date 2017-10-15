@@ -2,7 +2,6 @@
 //  DetailViewController.swift
 //  DnDShowcase
 //
-//  Created by Blazej Wdowikowski on 10/10/2017.
 //  Copyright © 2017 Netguru Sp. z o.o. All rights reserved.
 //
 
@@ -10,36 +9,19 @@ import UIKit
 
 class DetailViewController: UIViewController {
 
-    @IBOutlet weak var detailDescriptionLabel: UILabel!
-
-
-    func configureView() {
-        // Update the user interface for the detail item.
-        if let detail = detailItem {
-            if let label = detailDescriptionLabel {
-                label.text = detail.description
-            }
-        }
+    init() {
+        super.init(nibName: nil, bundle: nil)
+        title = "Select a case"
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        configureView()
+        
+        navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem
+        navigationItem.leftItemsSupplementBackButton = true
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-    var detailItem: NSDate? {
-        didSet {
-            // Update the view.
-            configureView()
-        }
-    }
-
-
 }
-
